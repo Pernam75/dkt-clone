@@ -19,8 +19,7 @@ const Header = () => {
                   width: '65vw',
                   gap: '2rem',
                 }}>
-                  {/* put the logo with a link to decathlon.fr */}
-                  <a href="https://www.decathlon.fr/">
+                  <a href="https://www.decathlon.fr/p/t-shirt-fitness-femme-500-essentials/_/R-p-338740?mc=8736397&c=noir" target='_blank' rel="noreferrer">
                     <DecathlonLogo />
                   </a>
                 <VtmnSearch
