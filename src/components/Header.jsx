@@ -16,7 +16,7 @@ const Header = () => {
                 style={{
                   display: 'flex',
                   justifyContent: 'flex-start',
-                  width: '65vw',
+                  width: '61vw',
                   gap: '2rem',
                 }}>
                   <a href="https://www.decathlon.fr/p/t-shirt-fitness-femme-500-essentials/_/R-p-338740?mc=8736397&c=noir" target='_blank' rel="noreferrer">
@@ -38,7 +38,7 @@ const Header = () => {
                 }}>
                 <div class="question-icon"
                   style={{
-                    width: '7vw',
+                    width: '25%',
                     justifyContent: 'center',
                   }}>
                   <VtmnNavbarLink
@@ -51,7 +51,7 @@ const Header = () => {
                 </div>
                 <div class="store-icon"
                   style={{
-                    width: '7vw',
+                    width: '25%',
                     justifyContent: 'center',
                   }}>
                   <VtmnNavbarLink
@@ -64,7 +64,7 @@ const Header = () => {
                 </div>
                 <div class="account-icon"
                   style={{
-                    width: '7vw',
+                    width: '25%',
                     justifyContent: 'center',
                   }}>
                   <VtmnNavbarLink
@@ -77,7 +77,7 @@ const Header = () => {
                 </div>
                 <div class="cart-icon"
                   style={{
-                    width: '7vw',
+                    width: '25%',
                     justifyContent: 'center',
                   }}>
                   <VtmnNavbarLink

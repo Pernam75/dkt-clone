@@ -9,7 +9,7 @@ const products = [ "https://contents.mediadecathlon.com/p2403888/k$32ba2bdff778a
 
 const ProductImage = () => {
     return (
-        <div className="w-[100%] m-auto">
+        <div className="w-[100vw] m-auto pr-16">
             <CarouselProduct products={products}/>
         </div>
     );

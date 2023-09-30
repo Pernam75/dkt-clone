@@ -1,25 +1,33 @@
 import React from "react";
 import ProductImage from "./ProductImage";
+import ProductInfo from "./ProductInfo";
+import Breadcrumb from "./Breadcrumb";
 
 const Product = () => {
     return (
         <div className="Product" style={{ 
             width: "100vw",
-            padding: "1rem"}}>
+            display: "flex",
+            flexDirection: "row",
+            }}>
             <div
                 style={{
                     width: "65%",
                     height: "100%",
-                    padding: "1rem",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     flexDirection: "column",
-                    backgroundColor: "grey",
+                    backgroundColor: "white",
                 }}>
-                <ProductImage/>
+                <Breadcrumb/>
+                <div className="pt-2">
+                    <ProductImage/>
+                </div>
             </div>
-
+            <div className="w-[35%] h-full flex bg-[#f7f8f9]">
+                <ProductInfo/>
+            </div>
         </div>
     );
 }
