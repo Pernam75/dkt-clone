@@ -14,7 +14,7 @@ const CarouselProduct = ({ products }) => {
   }
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative h-[100vh]">
       <div
         className="flex h-[80vh] transition easinout duration-700"
         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -43,6 +43,20 @@ const CarouselProduct = ({ products }) => {
             <IoIosArrowForward/>
           </IconContext.Provider>
         </button>
+      </div>
+      <div className="absolute bottom-8 w-full flex justify-center items-center">
+        {
+          products.map((p, i) => {
+            return <div
+              key={i}
+              onClick={() => setCurrent(i)}>
+            <img src={p} alt={`product-${i}`}
+              className={`h-12 w-12 m-2 rounded-md cursor-pointer transition ease-in-out duration-700 ${current === i ? "border-2 border-[#026a9e]" : " border-2 border-[#d9dde1]"}`}
+            />
+            </div>
+
+          })
+        }
       </div>
     </div>
   );
