@@ -44,7 +44,7 @@ const ProductInfo = () => {
                     size="small"
                     value={4.5}
                 />
-                <a className="text-[0.875rem] text-link visited:text-link underline font-bold" href="/">Voir les 100 avis</a>
+                <p className="text-[0.875rem] text-link underline font-bold hover:cursor-pointer">Voir les 100 avis</p>
             </div>
             {/* font is roboto condensed */}
             <p className="font-condensed text-[#001018] text-[0.875rem] leading-[1.43] pt-2">
