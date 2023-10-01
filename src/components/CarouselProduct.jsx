@@ -14,10 +14,10 @@ const CarouselProduct = ({ products }) => {
   }
 
   return (
-    <div className="overflow-hidden relative h-[100vh]">
-      <div className="relative h-[80vh] w-full">
+    <div className="overflow-hidden relative h-full">
+      <div className="relative w-full">
         <div
-          className="flex h-[80vh] transition easinout duration-700"
+          className="flex h-[100%] transition easinout duration-700"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {
@@ -45,7 +45,7 @@ const CarouselProduct = ({ products }) => {
           </button>
         </div>
       </div>
-      <div className="absolute bottom-8 w-full flex justify-center items-center">
+      <div className="flex justify-center mt-4">
         {
           products.map((p, i) => {
             return <div

@@ -13,7 +13,6 @@ const Product = () => {
             <div
                 style={{
                     width: "65%",
-                    height: "100%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",

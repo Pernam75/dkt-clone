@@ -17,7 +17,7 @@ const ProductInfo = () => {
     };
 
     return (
-        <div className="text-left px-5 pt-8 flex flex-col h-[140vh]">
+        <div className="text-left px-5 pt-8 flex flex-col pb-5">
             <p className="text-[#001018] text-[1.6rem] font-bold">T-shirt Fitness Femme - 500 <br></br>Essentials noir</p>
             <div className="flex pt-2">
                 <VtmnPrice
