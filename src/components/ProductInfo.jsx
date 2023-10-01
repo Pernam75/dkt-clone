@@ -1,4 +1,4 @@
-import { VtmnPrice, VtmnRating, VtmnButton } from '@vtmn/react';
+import { VtmnPrice, VtmnRating, VtmnButton, VtmnIcon } from '@vtmn/react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useState } from 'react';
 
@@ -17,8 +17,8 @@ const ProductInfo = () => {
     };
 
     return (
-        <div className="text-left px-5 pt-8 pb-8 flex flex-col h-[120vh]">
-            <h2 className="text-[#001018] text-[1.6rem] leading-[1.23] font-bold">T-shirt Fitness Femme - 500 <br></br>Essentials noir</h2>
+        <div className="text-left px-5 pt-8 flex flex-col h-[140vh]">
+            <p className="text-[#001018] text-[1.6rem] font-bold">T-shirt Fitness Femme - 500 <br></br>Essentials noir</p>
             <div className="flex pt-2">
                 <VtmnPrice
                     style={{
@@ -86,12 +86,18 @@ const ProductInfo = () => {
                     </ul>
                 )}
             </div>
+            <p className='pt-2 font-condensed font-semibold text-[0.9rem]'>Livraison à domicile - sous 3 à 4 jours</p>
+            <div className='flex flex-row items-center'>
+                <div className="h-2 w-2 bg-[#02be8a] rounded-full"></div><p className="text-[#001018] ml-2 font-condensed text-[0.8rem]">Disponible</p>
+            </div>
+            <p className='pt-2 font-condensed font-semibold text-[0.9rem]'>Retrait en magasin gratuit</p>
+            <p className='font-condensed text-[0.8rem] text-[#6b8588] underline hover:cursor-pointer'>Choisir un magasin</p>
             <div
+                className="flex flex-row justify-between pt-4"
                 style={{
                     display: 'flex',
                     justifyContent: 'center',
                     width: 400,
-                    paddingTop: '2rem',
                 }}
                 >
                 <VtmnButton
@@ -110,6 +116,23 @@ const ProductInfo = () => {
                 >
                     AJOUTER AU PANIER
                 </VtmnButton>
+            </div>
+            <p className='py-6 font-condensed font-semibold text-[0.9rem]'>Nos services :</p>
+            <div className='flex flex-row items-center'>
+                <VtmnIcon
+                    size={32}
+                    value="exchange-line"
+                    variant='brand'
+                />
+                <p className="text-[#001018] ml-6 font-condensed font-semibold text-[0.9rem]">Retours et échanges offerts pendant 365 jours</p>
+            </div>
+            <div className='flex flex-row items-center pt-4'>
+                <VtmnIcon
+                    size={32}
+                    value="store-fill"
+                    variant='brand'
+                />
+                <p className="text-[#001018] ml-6 font-condensed text-[0.9rem]"><strong>Retrait en Drive</strong> ou à l'accueil du magasin</p>
             </div>
         </div>
     );

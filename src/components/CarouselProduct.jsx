@@ -15,34 +15,35 @@ const CarouselProduct = ({ products }) => {
 
   return (
     <div className="overflow-hidden relative h-[100vh]">
-      <div
-        className="flex h-[80vh] transition easinout duration-700"
-        style={{ transform: `translateX(-${current * 100}%)` }}
-      >
-        {
-          products.map((p, i) => {
-            return <img
-            className="h-full w-full object-cover px-48"
-            src={p} alt={`product-${i}`}/>
-          })}
-      </div>
-
-      <div className="absolute top-0 h-full w-full flex justify-between items-center px-20">
-        <button
-          //#d9dde1 is the border color
-          className="h-12 w-12 justify-center items-center flex bg-[#FFFFFF] hover:bg-[#e7f3f9] rounded border-2 border-[#d9dde1]"
-          onClick={previousImage}>
-          <IconContext.Provider value={{ color: "#026a9e", size: "1.5rem" }}>
-            <IoIosArrowBack/>
-          </IconContext.Provider>
-        </button>
-        <button 
-          className="h-12 w-12 justify-center items-center flex bg-[#FFFFFF] hover:bg-[#e7f3f9] rounded border-2 border-[#d9dde1]"
-          onClick={nextImage}>
-          <IconContext.Provider value={{ color: "#026a9e", size: "1.5rem" }}>
-            <IoIosArrowForward/>
-          </IconContext.Provider>
-        </button>
+      <div className="relative h-[80vh] w-full">
+        <div
+          className="flex h-[80vh] transition easinout duration-700"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {
+            products.map((p, i) => {
+              return <img
+              className="h-full w-full object-cover px-[9.5rem]"
+              src={p} alt={`product-${i}`}/>
+            })}
+        </div>
+        <div className="flex justify-between absolute top-1/2 left-0 w-full px-16">
+          <button
+            //#d9dde1 is the border color
+            className="h-12 w-12 justify-center items-center flex bg-[#FFFFFF] hover:bg-[#e7f3f9] rounded border-2 border-[#d9dde1]"
+            onClick={previousImage}>
+            <IconContext.Provider value={{ color: "#026a9e", size: "1.5rem" }}>
+              <IoIosArrowBack/>
+            </IconContext.Provider>
+          </button>
+          <button 
+            className="h-12 w-12 justify-center items-center flex bg-[#FFFFFF] hover:bg-[#e7f3f9] rounded border-2 border-[#d9dde1]"
+            onClick={nextImage}>
+            <IconContext.Provider value={{ color: "#026a9e", size: "1.5rem" }}>
+              <IoIosArrowForward/>
+            </IconContext.Provider>
+          </button>
+        </div>
       </div>
       <div className="absolute bottom-8 w-full flex justify-center items-center">
         {
