@@ -1,13 +1,36 @@
-import { VtmnPrice, VtmnRating } from '@vtmn/react';
+import { VtmnPrice, VtmnRating, VtmnButton } from '@vtmn/react';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { useState } from 'react';
+
 const ProductInfo = () => {
+    const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL']
+    const [selectedSize, setSelectedSize] = useState(null)
+    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+    const selectSize = (size) => {
+        setSelectedSize(size)
+        setIsDropdownVisible(false)
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownVisible(!isDropdownVisible);
+    };
+
     return (
-        <div className="text-left px-5 pt-8 pb-8 flex flex-col">
+        <div className="text-left px-5 pt-8 pb-8 flex flex-col h-[120vh]">
             <h2 className="text-[#001018] text-[1.6rem] leading-[1.23] font-bold">T-shirt Fitness Femme - 500 <br></br>Essentials noir</h2>
             <div className="flex pt-2">
                 <VtmnPrice
+                    style={{
+                        fontFamily: 'Roboto Condensed',
+                        fontWeight: '700',
+                        fontSize: '1.5rem',
+                        lineHeight: '2rem',
+                        borderRadius: "0"
+                    }}
                     size="large"
                     variant="accent">
-                    9 €
+                    9€
                 </VtmnPrice>
             </div>
             <div className="flex pt-2 flex-row space-x-3">
@@ -32,16 +55,61 @@ const ProductInfo = () => {
             </p>
             <h2 className='font-condensed italic text-[#001018] text-[0.9rem] leading-[1.23] font-bold pt-8'>TAILLE :</h2>
             <div className="dropdown pt-2">
-                <label tabIndex={0} className="justify-start m-0 p-0 pl-2 btn w-full rounded-none font-condensed font-thin border-lightgrey hover:border-lightgrey bg-[white] hover:bg-[white]">SÉLECTIONNEZ UNE TAILLE</label>
-                <ul tabIndex={0} className="dropdown-content z-[1] rounded-none  menu shadow bg-base-100 w-full p-0">
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>XS</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>S</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>M</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>L</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>XL</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>2XL</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                    <li><a className='hover:bg-[#f0f1f3] hover:rounded-none'><p>3XL</p><p className='text-right text-[#05be8b]'>En stock</p></a></li>
-                </ul>
+                <label
+                    tabIndex={0}
+                    className="justify-between m-0 p-2 pl-2 btn w-full rounded-none font-condensed font-thin border-lightgrey hover:border-lightgrey bg-[white] hover:bg-[white]"
+                    onClick={toggleDropdown}
+                >
+                    {selectedSize ? selectedSize : "SÉLECTIONNEZ UNE TAILLE"}
+                    {isDropdownVisible ? (
+                        <IoIosArrowUp className="text-[1.2rem]" />
+                        ) : (
+                        <IoIosArrowDown className="text-[1.2rem]" />
+                    )}
+                </label>
+                {isDropdownVisible && (
+                    <ul
+                    tabIndex={0}
+                    className="dropdown-content z-[1] rounded-none menu shadow bg-base-100 w-full p-0"
+                    >
+                    {sizeOptions.map((size, index) => (
+                        <li key={index}>
+                        <p
+                            className='hover:bg-[#f0f1f3] hover:rounded-none hover:cursor-pointer'
+                            onClick={() => selectSize(size)}
+                        >
+                            <p>{size}</p>
+                            <p className='text-right text-[#05be8b]'>En stock</p>
+                        </p>
+                        </li>
+                    ))}
+                    </ul>
+                )}
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    width: 400,
+                    paddingTop: '2rem',
+                }}
+                >
+                <VtmnButton
+                    style={{
+                        fontFamily: 'Roboto Condensed',
+                        fontWeight: '700',
+                        fontSize: '0.9rem',
+                        lineHeight: '1.5rem',
+                        borderRadius: "0.15rem"
+                    }}
+                    iconAlone=""
+                    iconLeft={null}
+                    iconRight={null}
+                    size="stretched"
+                    variant="conversion"
+                >
+                    AJOUTER AU PANIER
+                </VtmnButton>
             </div>
         </div>
     );
