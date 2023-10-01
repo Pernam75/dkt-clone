@@ -14,7 +14,6 @@ const Product = () => {
                 style={{
                     width: "65%",
                     display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
                     flexDirection: "column",
                     backgroundColor: "white",

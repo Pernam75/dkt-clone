@@ -13,7 +13,7 @@ const products = [
 
 const ProductImage = () => {
     return (
-        <div className="w-[100vw] pr-16 justify-start">
+        <div className="w-[100vw] pr-16">
             <CarouselProduct products={products}/>
         </div>
     );
