@@ -23,11 +23,11 @@ const CarouselProduct = ({ products }) => {
           {
             products.map((p, i) => {
               return <img
-              className="h-full w-full object-cover px-[9.5rem]"
+              className="h-full w-full object-cover px-[16vw]"
               src={p} alt={`product-${i}`}/>
             })}
         </div>
-        <div className="flex justify-between absolute top-1/2 left-0 w-full px-16">
+        <div className="flex justify-between absolute top-1/2 left-0 w-full px-[10vw]">
           <button
             //#d9dde1 is the border color
             className="h-12 w-12 justify-center items-center flex bg-[#FFFFFF] hover:bg-[#e7f3f9] rounded border-2 border-[#d9dde1]"
