@@ -23,7 +23,7 @@ const Product = () => {
                     <ProductImage/>
                 </div>
             </div>
-            <div className="w-[35%] h-full flex bg-[#f7f8f9]">
+            <div className="w-[35%] min-h-[100vh] flex bg-[#f7f8f9]">
                 <ProductInfo/>
             </div>
         </div>
