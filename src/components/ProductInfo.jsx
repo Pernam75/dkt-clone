@@ -1,8 +1,6 @@
 import { VtmnPrice, VtmnRating, VtmnButton, VtmnIcon, VtmnModal, VtmnModalTitle, VtmnModalDescription, VtmnModalActions, VtmnTooltip } from '@vtmn/react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useState } from 'react';
-import { EasterEgg } from './EasterEgg';
-
 
 const product_info = {
     femmes: {
@@ -198,7 +196,6 @@ const ProductInfo = ({ gender }) => {
                 />
                 <p className="text-[#001018] ml-6 font-condensed text-[0.9rem]"><strong>Retrait en Drive</strong> ou à l'accueil du magasin</p>
             </div>
-            {/* <EasterEgg/> */}
         </div>
 
     );
