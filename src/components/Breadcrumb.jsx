@@ -9,8 +9,9 @@ const Breadcrumb = () => {
             }}>
             <VtmnBreadcrumb aria-label="Breadcrumb">
                 <VtmnBreadcrumbItem href="/">Decathlon</VtmnBreadcrumbItem>
-                <VtmnBreadcrumbItem href="/">Femme</VtmnBreadcrumbItem>
-                <VtmnBreadcrumbItem href="/">Vêtements</VtmnBreadcrumbItem>
+                <VtmnBreadcrumbItem href="/">Tous les sports</VtmnBreadcrumbItem>
+                <VtmnBreadcrumbItem href="/">Pilates, Gym Douce</VtmnBreadcrumbItem>
+                <VtmnBreadcrumbItem href="/">Vêtements pilate</VtmnBreadcrumbItem>
             </VtmnBreadcrumb>
         </div>
     );

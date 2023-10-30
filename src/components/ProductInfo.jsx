@@ -1,8 +1,27 @@
 import { VtmnPrice, VtmnRating, VtmnButton, VtmnIcon, VtmnModal, VtmnModalTitle, VtmnModalDescription, VtmnModalActions, VtmnTooltip } from '@vtmn/react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useState } from 'react';
+import { EasterEgg } from './EasterEgg';
 
-const ProductInfo = () => {
+
+const product_info = {
+    femmes: {
+        title: "T-shirt Fitness Femme - 500 Essentials noir",
+        price: "9€",
+        rating: 4.5,
+        description: ["Éco-conçu avec 30% de coton recyclé ce tee-shirt, 190g/m², de fitness femme à manches courtes, se porte à la salle de sport, comme en ville !",
+        "Pièce maitresse de notre collection ESSENTIEL, ce tee-shirt femme intemporel est conçu pour le sport comme pour la vie quotidienne. Notre choix de matière contribue à la durabilité du produit."],
+    },
+    hommes: {
+        title: "T-shirt Slim fitness Homme - 500 vert Cyprès",
+        price: "9€",
+        rating: 4.7,
+        description: ["Vous allez aimer : sa coupe slim très tendance, sa matière respirante hyper confortable, sa facilité d'entretien. Vous allez adorer : sa douceur ultra agréable !",
+        "Fit slim, confortable et extensible, ce t-shirt, 180 g/m², met en valeur votre silhouette. Vous le portez avec plaisir au sport comme au quotidien."],
+    },
+};
+
+const ProductInfo = ({ gender }) => {
     const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL']
     const [selectedSize, setSelectedSize] = useState(null)
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -17,9 +36,11 @@ const ProductInfo = () => {
         setIsDropdownVisible(!isDropdownVisible);
     };
 
+    const selectedProduct_infos = gender === 'femmes' ? product_info.femmes : product_info.hommes;
+
     return (
-        <div className="text-left px-8 pt-4 flex flex-col pb-5 max-w-md">
-            <p className="text-[#001018] text-[1.6rem] font-bold">T-shirt Fitness Femme - 500 <br></br>Essentials noir</p>
+        <div className="text-left px-8 pt-4 flex flex-col pb-5 max-w-[100%]">
+            <p className="text-[#001018] text-[1.6rem] font-bold">{selectedProduct_infos.title}</p>
             <div className="flex pt-2">
                 <VtmnPrice
                     style={{
@@ -31,7 +52,7 @@ const ProductInfo = () => {
                     }}
                     size="large"
                     variant="accent">
-                    9€
+                    {selectedProduct_infos.price}
                 </VtmnPrice>
             </div>
             <div className="flex pt-2 flex-row space-x-3">
@@ -42,15 +63,15 @@ const ProductInfo = () => {
                     readonly
                     showValue
                     size="small"
-                    value={4.5}
+                    value={selectedProduct_infos.rating}
                 />
                 <p className="text-[0.875rem] text-link underline font-bold hover:cursor-pointer">Voir les 100 avis</p>
             </div>
-            {/* font is roboto condensed */}
             <p className="font-condensed text-[#001018] text-[0.875rem] leading-[1.43] pt-2">
-                Éco-conçu avec 30% de coton recyclé ce tee-shirt, 190g/m², de fitness femme à manches courtes, se porte à la salle de sport, comme en ville !</p>
+                {selectedProduct_infos.description[0]}
+            </p>
             <p className="font-condensed text-[#001018] text-[0.875rem] leading-[1.43] pt-2">
-                Pièce maitresse de notre collection ESSENTIEL, ce tee-shirt femme intemporel est conçu pour le sport comme pour la vie quotidienne. Notre choix de matière contribue à la durabilité du produit.
+                {selectedProduct_infos.description[1]}
             </p>
             <h2 className='font-condensed italic text-[#001018] text-[0.9rem] leading-[1.23] font-bold pt-4'>TAILLE :</h2>
             <div className="dropdown pt-2">
@@ -117,7 +138,7 @@ const ProductInfo = () => {
                         This is the title
                     </VtmnModalTitle>
                     <VtmnModalDescription>
-                        Chosen size is {selectedSize}
+                        La taille choisir est {selectedSize} pour {gender}
                     </VtmnModalDescription>
                     <VtmnModalActions>
                         <VtmnButton
@@ -177,7 +198,9 @@ const ProductInfo = () => {
                 />
                 <p className="text-[#001018] ml-6 font-condensed text-[0.9rem]"><strong>Retrait en Drive</strong> ou à l'accueil du magasin</p>
             </div>
+            {/* <EasterEgg/> */}
         </div>
+
     );
 }
 
