@@ -4,9 +4,15 @@ This application is a clone of the [Decathlon website](www.decathlon.fr). The ai
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project was created using the [Decathlon Design System](https://decathlon.design/) and the component library @vtmn/react.
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+That will install the dependencies.
 
 ### `npm start`
 
