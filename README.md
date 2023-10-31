@@ -1,6 +1,7 @@
 # Decathlon Clone
 
 This application is a clone of the [Decathlon website](www.decathlon.fr). The aim of this project is to offer an similar interface to what a customer would see online, in order to showcase the Virtual Try On proof of concept developed by Decathlon's in-house teams.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
